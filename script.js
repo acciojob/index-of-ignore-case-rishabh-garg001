@@ -1,4 +1,4 @@
-function indexOfIgnoreCase(s1, s2) {
+function indexOfIgnoreCase(str, subStr) {
   // write your code here
 	
 let temp = -1;
