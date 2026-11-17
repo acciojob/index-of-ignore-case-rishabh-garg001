@@ -1,30 +1,27 @@
-function indexOfIgnoreCase(str, subStr) {
-  // write your code here
-	
-let temp = -1;
+function indexOfIgnoreCase(s1, s2) {
+    s1 = s1.toLowerCase();
+    s2 = s2.toLowerCase();
 
-for (let i = 0; i < str.length; i++) {
+    if (s2.length === 0) {
+        return 0;
+    }
 
-    let k = i;
-    let found = true;
+    for (let i = 0; i <= s1.length - s2.length; i++) {
+        let found = true;
 
-    for (let j = 0; j < subStr.length; j++) {
+        for (let j = 0; j < s2.length; j++) {
+            if (s1[i + j] !== s2[j]) {
+                found = false;
+                break;
+            }
+        }
 
-        if (str[k] == subStr[j]) {
-            k++;
-        } else {
-            found = false;
-            break;
+        if (found) {
+            return i;
         }
     }
 
-    if (found) {
-        temp = i;
-        break;
-    }
-}
-
-console.log(temp);
+    return -1;
 }
 
 // Please do not change the code below
